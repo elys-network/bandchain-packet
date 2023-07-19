@@ -4,11 +4,8 @@ import (
 	"encoding/hex"
 	"fmt"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	clienttypes "github.com/cosmos/ibc-go/modules/core/02-client/types"
-	channeltypes "github.com/cosmos/ibc-go/modules/core/04-channel/types"
-
 	"github.com/bandprotocol/bandchain-packet/packet"
+	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
 func main() {
@@ -25,6 +22,4 @@ func main() {
 	}
 	// This can be data of packet
 	fmt.Println(string(req.GetBytes()))
-	packet := channeltypes.NewPacket(req.GetBytes(), 0, "src-port", "src-channel", "dst-port", "dst-channel", clienttypes.NewHeight(0, 0), 10)
-	_ = packet
 }
